@@ -1,0 +1,32 @@
+{
+  "name": "vue-yue",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "npm run build && npm run example",
+    "build": "unbuild",
+    "example": "cd example && npm start"
+  },
+  "dependencies": {
+    "@vue/runtime-core": "^3.3.4",
+    "gui": "^0.13.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}

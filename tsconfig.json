@@ -1,0 +1,13 @@
+{
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "target": "es2015",
+    "baseUrl": "src",
+    "outDir": "./dist",
+    "module": "esnext",
+    "declaration": true
+  }
+}
