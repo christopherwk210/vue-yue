@@ -3,17 +3,20 @@ import { VYWindow } from '../VYNode';
 
 export const Window = (): VYWindow => {
   const window = gui.Window.create({});
+  const defaultChild = window.getContentView();
 
   return {
     type: 'Window',
     element: window,
     insertChild(child) {
-      window.setContentView(child.element);
+      window.setContentView(child.element || defaultChild);
     },
-    removeChild(child) {
-      window.setContentView(null);
+    removeChild() {
+      window.setContentView(defaultChild);
     },
-    insertBefore() { throw new Error(''); },
+    insertBefore(child) {
+      window.setContentView(child.element || defaultChild);
+    },
     getNextSibling: () => null
   }
 };

@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from "url";
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
@@ -13,5 +14,10 @@ export default defineConfig({
       external: ['path', 'gui']
     }
   },
-  plugins: [vue()]
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      'vue-yue': fileURLToPath(new URL('../dist', import.meta.url))
+    }
+  }
 });

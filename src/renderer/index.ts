@@ -26,8 +26,7 @@ export const createApp: CreateAppFunction<any> = (...args) => {
     return mount(window);
   };
 
-  app.mount('');
-
+  (app as any).mount();
   guiLoop();
 
   return app;

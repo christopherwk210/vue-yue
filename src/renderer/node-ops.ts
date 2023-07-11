@@ -12,8 +12,7 @@ export const nodeOps: RendererOptions<VYNode<any>, VYWindow> = {
   },
 
   insert(child, parent, anchor) {
-    console.log('-- insert', { parent, child, anchor });
-    
+    console.log('insert', { child, parent, anchor })
     if (anchor) {
       parent.insertBefore(child, anchor);
     } else {
@@ -33,7 +32,7 @@ export const nodeOps: RendererOptions<VYNode<any>, VYWindow> = {
   },
 
   parentNode(node) {
-    console.log('parentNode')
+    console.log('parentNode');
     return null;
   },
 
